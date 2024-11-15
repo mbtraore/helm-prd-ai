@@ -121,7 +121,7 @@ Create selector labels to include on chart all Pipelines resources
 */}}
 {{- define "pipelines.selectorLabels" -}}
 {{ include "base.selectorLabels" . }}
-app.kubernetes.io/component: {{ .Values.nameOverride | default (include "pipelines.name" .)}}
+app.kubernetes.io/component: {{ include "pipelines.name" . }}-{{ randAlpha 5 | lower }}
 {{- end }}
 
 {{/*
@@ -139,6 +139,6 @@ Create the service endpoint to use for Pipelines if the subchart is used
 {{- if .Values.pipelines.enabled -}}
 {{- $clusterDomain := .Values.clusterDomain }}
 {{- $pipelinesServicePort := .Values.pipelines.service.port | toString }}
-{{- printf "http://%s.%s.svc.%s:%s" .Values.nameOverride | default (include "pipelines.name" .) (.Release.Namespace) $clusterDomain $pipelinesServicePort }}
+{{- printf "http://%s.%s.svc.%s:%s" (include "pipelines.name" .)-{{ randAlpha 5 | lower }} (.Release.Namespace) $clusterDomain $pipelinesServicePort }}
 {{- end }}
 {{- end }}
