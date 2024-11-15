@@ -9,14 +9,14 @@ Set the name of the Open WebUI resources
 Set the name of the integrated Ollama resources
 */}}
 {{- define "ollama.name" -}}
-open-webui-ollama
+{{- default .Release.Name }}
 {{- end -}}
 
 {{/*
 Set the name of the integrated Pipelines resources
 */}}
 {{- define "pipelines.name" -}}
-open-webui-pipelines
+.Release.Name 
 {{- end -}}
 
 {{/*
@@ -139,6 +139,6 @@ Create the service endpoint to use for Pipelines if the subchart is used
 {{- if .Values.pipelines.enabled -}}
 {{- $clusterDomain := .Values.clusterDomain }}
 {{- $pipelinesServicePort := .Values.pipelines.service.port | toString }}
-{{- printf "http://%s.%s.svc.%s:%s" Release.Name Release.Namespace $clusterDomain $pipelinesServicePort }}
+{{- printf "http://%s.%s.svc.%s:%s" (include "pipelines.name" .) (.Release.Namespace) $clusterDomain $pipelinesServicePort }}
 {{- end }}
 {{- end }}
