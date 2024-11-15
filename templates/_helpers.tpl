@@ -139,6 +139,6 @@ Create the service endpoint to use for Pipelines if the subchart is used
 {{- if .Values.pipelines.enabled -}}
 {{- $clusterDomain := .Values.clusterDomain }}
 {{- $pipelinesServicePort := .Values.pipelines.service.port | toString }}
-{{- printf "http://%s.%s.svc.%s:%s" (.Release.Name .) (.Release.Namespace) $clusterDomain $pipelinesServicePort }}
+{{- printf "http://%s.%s.svc.%s:%s" Release.Name Release.Namespace $clusterDomain $pipelinesServicePort }}
 {{- end }}
 {{- end }}
