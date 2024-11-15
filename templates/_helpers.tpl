@@ -9,14 +9,14 @@ Set the name of the Open WebUI resources
 Set the name of the integrated Ollama resources
 */}}
 {{- define "ollama.name" -}}
-{{- default .Release.Name }}
+open-webui-ollama
 {{- end -}}
 
 {{/*
 Set the name of the integrated Pipelines resources
 */}}
 {{- define "pipelines.name" -}}
-.Release.Name 
+{{- default .Release.Name }}
 {{- end -}}
 
 {{/*
