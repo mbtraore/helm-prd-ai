@@ -11,7 +11,7 @@ entries:
               url: https://github.com/ollama/ollama/releases/tag/v0.4.0
     apiVersion: v2
     appVersion: 0.4.0
-    created: "2024-11-15T15:52:47.6108604+01:00"
+    created: "2024-11-15T16:01:52.3682818+01:00"
     description: Get up and running with large language models locally.
     digest: c65b53d26f1195b33cb6713fb2e24dd98abd88f25f07b1e363cd32f913776573
     home: https://ollama.ai/
@@ -43,7 +43,7 @@ entries:
               url: https://github.com/ollama/ollama/releases/tag/v0.4.0
     apiVersion: v2
     appVersion: 0.4.0
-    created: "2024-11-15T15:52:47.6171398+01:00"
+    created: "2024-11-15T16:01:52.3745226+01:00"
     description: Get up and running with large language models locally.
     digest: c65b53d26f1195b33cb6713fb2e24dd98abd88f25f07b1e363cd32f913776573
     home: https://ollama.ai/
@@ -70,7 +70,7 @@ entries:
       licenses: MIT
     apiVersion: v2
     appVersion: 0.3.35
-    created: "2024-11-15T15:52:47.6138208+01:00"
+    created: "2024-11-15T16:01:52.3712634+01:00"
     dependencies:
     - condition: ollama.enabled
       import-values:
@@ -92,7 +92,7 @@ entries:
       version: '>=2.9.0'
     description: "Open WebUI: A User-Friendly Web Interface for Chat Interactions
       \U0001F44B"
-    digest: 9ffc618cf903d280af0598bdc1546d9af0c59fa74e6a9d8edab4e603d2dabc07
+    digest: 174adec5296fb90718fab630f9c0cede20a795ab00c9b850e84a99746e49fc39
     home: https://www.openwebui.com/
     icon: https://raw.githubusercontent.com/open-webui/open-webui/main/static/favicon.png
     keywords:
@@ -113,9 +113,9 @@ entries:
       licenses: MIT
     apiVersion: v2
     appVersion: alpha
-    created: "2024-11-15T15:52:47.6176567+01:00"
+    created: "2024-11-15T16:01:52.3749871+01:00"
     description: 'Pipelines: UI-Agnostic OpenAI API Plugin Framework'
-    digest: 6abeede465a009cc19563a2195a49cece3051bca3cd8a72c0b3b6f51f31b460d
+    digest: e503b0d779d7be7a89e9b9fcaa38d964efce6e81ac004d97f9470955680b52cd
     home: https://github.com/open-webui/pipelines
     icon: https://github.com/open-webui/pipelines/raw/main/header.png
     keywords:
@@ -132,7 +132,7 @@ entries:
   tika:
   - apiVersion: v2
     appVersion: 2.9.0.0
-    created: "2024-11-15T15:52:47.6161108+01:00"
+    created: "2024-11-15T16:01:52.3735378+01:00"
     description: The official Helm chart to deploy Apache Tika on Kubernetes
     digest: ca9fa418bcb83afc1b340d90563bedc71a83a6434a2c7c528ddaba284a55c427
     home: https://tika.apache.org
@@ -164,7 +164,7 @@ entries:
     version: 2.9.0
   - apiVersion: v2
     appVersion: 2.9.0.0
-    created: "2024-11-15T15:52:47.619149+01:00"
+    created: "2024-11-15T16:01:52.376357+01:00"
     description: The official Helm chart to deploy Apache Tika on Kubernetes
     digest: ca9fa418bcb83afc1b340d90563bedc71a83a6434a2c7c528ddaba284a55c427
     home: https://tika.apache.org
@@ -194,4 +194,4 @@ entries:
     urls:
     - https://mbtraore.github.io/helm-prd-ai/charts/tika-2.9.0.tgz
     version: 2.9.0
-generated: "2024-11-15T15:52:47.6096582+01:00"
+generated: "2024-11-15T16:01:52.3658224+01:00"
