@@ -1,0 +1,160 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "service": {
+            "description": "Service specific configuration",
+            "type": "object",
+            "properties": {
+                "image": {
+                    "description": "image docker",
+                    "type": "object",
+                    "properties": {
+                        "pullPolicy": {
+                            "type": "string",
+                            "description": "option when pulling the docker image",
+                            "default": "IfNotPresent",
+                            "enum": [
+                                "IfNotPresent",
+                                "Always",
+                                "Never"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "persistence": {
+            "description": "Configuration for persistence",
+            "type": "object",
+            "x-onyxia": {
+                "overwriteSchemaWith": "ide/persistence.json"
+            },
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Create a persistent volume",
+                    "default": true
+                },
+                "size": {
+                    "type": "string",
+                    "title": "Persistent volume size",
+                    "description": "Size of the persistent volume",
+                    "default": "10Gi",
+                    "form": true,
+                    "render": "slider",
+                    "sliderMin": 1,
+                    "sliderMax": 100,
+                    "sliderStep": 1,
+                    "sliderUnit": "Gi",
+                    "x-onyxia": {
+                        "overwriteDefaultWith": "region.resources.disk",
+                        "useRegionSliderConfig": "disk"
+                    },
+                    "hidden": {
+                        "value": false,
+                        "path": "persistence/enabled"
+                    }
+                }
+
+            }
+        },
+        "ingress": {
+            "type": "object",
+            "form": true,
+            "title": "Ingress Details",
+            "properties": {
+                "enabled": {
+                    "description": "Enable Ingress",
+                    "type": "boolean",
+                    "default": true,
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "k8s.ingress"
+                    }
+                },
+                "host": {
+                    "type": "string",
+                    "form": true,
+                    "title": "host",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+                    }
+                },
+                "userhost": {
+                    "type": "string",
+                    "form": true,
+                    "title": "host",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-user.{{k8s.domain}}"
+                    }
+                },
+                "class": {
+                    "type": "string",
+                    "form": true,
+                    "title": "class",
+                    "default": "",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "{{k8s.class}}"
+                    }
+                }
+            }
+        },
+        "global": {
+            "description": "Suspend",
+            "type": "object",
+            "properties": {
+                "suspend": {
+                    "type": "boolean",
+                    "description": "Suspend this service",
+                    "default": false,
+                    "x-onyxia": {
+                        "hidden": true
+                    }
+                }
+            }
+        },
+        "nameOverride": {
+            "type": "string",
+            "form": true,
+            "title": "nameOverride",
+            "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}"
+            }
+        },
+        "ollama" : {
+            "type": "object",
+            "properties": {
+                "fullnameOverride": {
+                    "type": "string",
+                    "form": true,
+                    "title": "fullnameOverride",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-open-webui-ollama"
+                    }
+                }     
+                
+            }
+        },
+        "pipelines" : {
+            "type": "object",
+            "properties": {
+                "nameOverride": {
+                    "type": "string",
+                    "form": true,
+                    "title": "nameOverride",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-open-webui-pipelines"
+                    }
+                }
+            }
+        }                    
+
+    }
+}
